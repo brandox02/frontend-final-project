@@ -1,12 +1,11 @@
 import ItemCard from "../../components/item-card";
 import { Layout } from "../../components/structure/layout";
 
-
 export default function ShoppingCard(props) {
   return (
     <Layout>
       <h3 className="d-3">Shopping List</h3>
-      <div style={{ display: "flex",gap:"1em" }}>
+      <div style={{ display: "flex", gap: "1em" }}>
         <ItemCard
           name="phone cover"
           seller="mashu "

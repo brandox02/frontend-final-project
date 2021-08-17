@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { Layout } from "../components/structure/layout";
 import StaticSlide from "../components/staticSlide";
 import ProductCard, { ProductDisplay } from "../components/productCard";
-import { Splide, SplideSlide } from 'splide-nextjs/react-splide';
+import Carrusel from "../components/carrusel";
+import ItemCard from "../components/item-card";
+
+const link_0 =
+  "https://i.pinimg.com/originals/71/96/cf/7196cfdf85e22579fe08e82385d4061a.png";
+const link_1 =
+  "https://www.senorcool.com/en/system/files/styles/artwork_case_phone_iphone7/private/senorcool_paisdelasmaquinas_evangelion_eva_kanji.png?itok=0P8u19ZE";
+
+const product_array = new Array<number>(1, 2, 3, 4, 5, 8, 9, 0);
+const items_array = new Array<string>(
+  link_0,
+  link_1,
+  link_0,
+  link_1,
+  link_0,
+  link_1,
+  link_0,
+  link_1,
+  link_0,
+  link_1
+);
+
+
 
 class Index extends React.Component<any, any> {
   constructor(props: any) {
@@ -19,63 +41,43 @@ class Index extends React.Component<any, any> {
               <b>Shop Recomender</b>
             </p>
             <ProductDisplay>
-              <ProductCard img={"https://images-na.ssl-images-amazon.com/images/I/51dEP2Nz2VL._SY445_SX342_QL70_ML2_.jpg"}/>
-              <ProductCard img={"https://images-na.ssl-images-amazon.com/images/I/51dEP2Nz2VL._SY445_SX342_QL70_ML2_.jpg"}/>
-              <ProductCard img={"https://images-na.ssl-images-amazon.com/images/I/51dEP2Nz2VL._SY445_SX342_QL70_ML2_.jpg"}/>
-              <ProductCard img={"https://images-na.ssl-images-amazon.com/images/I/51dEP2Nz2VL._SY445_SX342_QL70_ML2_.jpg"}/>
-              <ProductCard img={"https://images-na.ssl-images-amazon.com/images/I/51dEP2Nz2VL._SY445_SX342_QL70_ML2_.jpg"}/>
-              <ProductCard img={"https://images-na.ssl-images-amazon.com/images/I/51dEP2Nz2VL._SY445_SX342_QL70_ML2_.jpg"}/>
-
+              {product_array.map((item, key) => (
+                <ProductCard
+                  img={
+                    "https://images-na.ssl-images-amazon.com/images/I/51dEP2Nz2VL._SY445_SX342_QL70_ML2_.jpg"
+                  }
+                  key={key}
+                />
+              ))}
             </ProductDisplay>
             <p style={{ margin: "2rem 1rem", fontSize: "2em" }}>
               <b>Explore designs picked for you</b>
             </p>
-            <div className="carrusel-item">
-              <Splide
-                options={{
-                  rewind: true,
-                  gap: "2rem",
-                  perPage: 3              
-                }}
-              >
-                <SplideSlide>
-                  <img
-                    src="https://alternativanerd.com.br/wp-content/uploads/2019/03/810ccR3YiuIJtufm2uxS7EIEFKc-850x450.jpg"
-                    alt="Image 1"
-                  />
-                </SplideSlide>
-                <SplideSlide>
-                  <img
-                    src="https://somoskudasai.com/wp-content/uploads/2020/11/portada_love-live-nijigasaki-23.jpg"
-                    alt="Image 2"
-                  />
-                </SplideSlide>
-              </Splide>
-            </div>
+            <Carrusel perPage={3}>
+              {items_array.map((item, index) => (
+                <ItemCard
+                  name="phone cover"
+                  seller="mashu "
+                  img_url={item}
+                  fav={true}
+                  key={index}
+                />
+              ))}
+            </Carrusel>
+
             <p style={{ margin: "2rem 1rem", fontSize: "2em" }}>
               <b>Explore designs picked for you</b>
             </p>
-            <div className="carrusel">
-              <Splide
-                options={{
-                  rewind: true,
-                  gap: "2rem",
-                }}
-              >
-                <SplideSlide>
-                  <img
-                    src="https://alternativanerd.com.br/wp-content/uploads/2019/03/810ccR3YiuIJtufm2uxS7EIEFKc-850x450.jpg"
-                    alt="Image 1"
-                  />
-                </SplideSlide>
-                <SplideSlide>
-                  <img
-                    src="https://somoskudasai.com/wp-content/uploads/2020/11/portada_love-live-nijigasaki-23.jpg"
-                    alt="Image 2"
-                  />
-                </SplideSlide>
-              </Splide>
-            </div>
+            <Carrusel perPage={1}>
+              <img
+                src="https://alternativanerd.com.br/wp-content/uploads/2019/03/810ccR3YiuIJtufm2uxS7EIEFKc-850x450.jpg"
+                alt="Image 1"
+              />
+              <img
+                src="https://somoskudasai.com/wp-content/uploads/2020/11/portada_love-live-nijigasaki-23.jpg"
+                alt="Image 2"
+              />
+            </Carrusel>
           </main>
         </Layout>
       </div>
