@@ -1,0 +1,30 @@
+.item-card
+    border: 1px solid $border-color
+
+    .content
+        padding: 1em
+
+    .name
+        font-size: 1.1em
+        display: block
+
+    .vendor
+        color: #00000099
+
+    .favorite-icon
+        position: relative
+        font-size: 1.1em
+        color: $fav-color
+        cursor: pointer
+
+        span
+            position: absolute
+            bottom: 10px
+            right: 10px
+            transition: 200ms
+            &:hover
+                transform: scale(1.1)
+
+    img
+        height: 300px
+        width: 300px

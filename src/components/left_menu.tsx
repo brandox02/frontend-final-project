@@ -42,7 +42,7 @@ const LeftMenu = (props: MenuProps) => {
         {props.categoris.map((item: any, index: number) => (
           <CategoryContainer
             name={item.name}
-            cover="IMG_5200.jpg"
+            cover="/IMG_5200.jpg"
             key={index}
           />
         ))}

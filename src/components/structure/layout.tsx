@@ -7,10 +7,7 @@ const Layout = (props) => {
   const [menu, setMenu] = useState(false);
   return (
     <div id="layout">
-      <Header 
-        menuState={menu}
-        setMenu={setMenu}
-      />
+      <Header menuState={menu} setMenu={setMenu} />
       <LeftMenu
         categoris={[
           { name: "Categoy 1", cover: "IMG_5200.jpg" },
@@ -20,8 +17,8 @@ const Layout = (props) => {
         visible={menu}
         changeVisible={setMenu}
       />
-      {props.children}
-      <Footer/>
+      <div className="container">{props.children}</div>
+      <Footer />
     </div>
   );
 };

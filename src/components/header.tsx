@@ -16,7 +16,7 @@ export default function Header(props: HeaderProps) {
         <Logo />
         <div>
           <IconLink link={"/list/favorite"}>{favorite_null}</IconLink>
-          <IconLink link={"/list/shopping"}>{shopping_card}</IconLink>
+          <IconLink link={"/list/shopping-cart"}>{shopping_card}</IconLink>
         </div>
       </div>
     </header>
