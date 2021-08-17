@@ -2,7 +2,7 @@ import React from "react";
 import { Layout } from "../components/structure/layout";
 import StaticSlide from "../components/staticSlide";
 import ProductCard, { ProductDisplay } from "../components/productCard";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { Splide, SplideSlide } from 'splide-nextjs/react-splide';
 
 class Index extends React.Component<any, any> {
   constructor(props: any) {
