@@ -3,6 +3,8 @@ import Head from "next/head";
 import "../styles/global.sass";
 import { Provider } from "react-redux";
 import store from "../redux/store";
+//import '@splidejs/splide/dist/css/themes/splide-sea-green.min.css';
+import'../styles/slider.css'
 
 function MyApp({ Component, pageProps }) {
   return (

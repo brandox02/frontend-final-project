@@ -12,6 +12,7 @@
     "test": "echo 'All tests passed'"
   },
   "dependencies": {
+    "@splidejs/react-splide": "^0.4.4",
     "axios": "^0.21.1",
     "next": "^11.1.0",
     "react": "^17.0.2",
