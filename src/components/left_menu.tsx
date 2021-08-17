@@ -6,6 +6,7 @@ export type Category = {
 interface MenuProps {
   categoris: Array<Category>;
   visible: Boolean;
+  changeVisible: any
 }
 
 const CategoryContainer = (props: Category) => {
@@ -20,20 +21,34 @@ const CategoryContainer = (props: Category) => {
   );
 };
 
-const LestMenu = (props: MenuProps) => {
+const LeftMenu = (props: MenuProps) => {
+  const hidden_menu=(e:any)=>{
+    console.log(props.visible)
+    props.changeVisible(false)
+  }
   return (
-    <aside className="left-menu">
-      <div className="display">
-        <span className="d1">Hi the Menu is Here!</span>
-        <br />
-        <span style={{ fontSize: "0.8em" }}>
-          <b>Log In</b> or <b>Log Up</b>
-        </span>
-      </div>
-      {props.categoris.map((item: any, index: number) => (
-        <CategoryContainer name={item.name} cover="IMG_5200.jpg" key={index} />
-      ))}
-    </aside>
+    <>
+      <aside
+        id="Left-menu"
+        className={"left-menu " + (!props.visible ? "hidden-menu" : "")}
+      >
+        <div className="display">
+          <span className="d1">Hi the Menu is Here!</span>
+          <br />
+          <span style={{ fontSize: "0.8em" }}>
+            <b>Log In</b> or <b>Log Up</b>
+          </span>
+        </div>
+        {props.categoris.map((item: any, index: number) => (
+          <CategoryContainer
+            name={item.name}
+            cover="IMG_5200.jpg"
+            key={index}
+          />
+        ))}
+      </aside>
+      {props.visible ? <div className="background" onClick={e => hidden_menu(e)}/> : ""}
+    </>
   );
 };
 
@@ -50,4 +65,4 @@ const arrow = (
     </svg>
   </div>
 );
-export default LestMenu;
+export default LeftMenu;

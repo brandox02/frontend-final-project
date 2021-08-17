@@ -1,6 +1,14 @@
 .left-menu
     font-size: 15px
     width: 300px
+    position: fixed
+    top: 0
+    left: 0
+    height: 100%
+    transition: 0.4s  ease-out
+    z-index: 9
+    background-color: #fff
+
     .container
         padding: .5em
         margin: auto
@@ -22,6 +30,48 @@
 
 .display
     background-color: #F9F9FB
-    padding: 1em 
+    padding: 1em
     .d1
         font-size: 1.2em
+
+.icon-link
+    display: inline-flex
+    justify-content: center
+    margin: .5em
+
+.hamburger-box
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 4px
+    cursor: pointer
+    .hamburger
+        display: block
+        height: 2px
+        width: 20px
+        border-radius: 4px
+        background-color: currentColor
+
+        &::after, &::before
+            position: absolute
+            content: ""
+            background: currentColor
+            height: 2px
+            width: 20px
+
+        &::before
+            transform: translateY(-7px)
+
+        &::after
+            transform: translateY(7px)
+
+.background
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    background: rgba(0, 0, 0, .3)
+
+.hidden-menu
+    left: -100%

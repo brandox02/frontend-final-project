@@ -2,7 +2,43 @@ $border-color: rgba(0,0,0,.1)
 
 @import "menus"
 
-
 #header
-    padding: 1em
+
+    padding: 10px
+    margin-bottom: 2em
     border: 1px solid $border-color
+
+    .header-body
+        display: flex
+        justify-content: space-between
+        align-content: center
+        max-width: 1200px
+        margin: auto
+
+    .logo
+        display: flex
+        justify-content: center
+        align-items: center
+
+.static-slide
+    color: #fff
+    background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/f0b2d50044b51cb4c8ebb29c9536d5bb.jpg')
+    background-position: center
+    background-size: cover
+    background-repeat: no
+    max-width: 1500px
+    margin: auto
+    padding: 2em
+    border-radius: 5px
+
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    .title
+        font-size: 4em
+        line-height: 0.9
+    .content
+        margin: 1em
+        font-size: 1.4em

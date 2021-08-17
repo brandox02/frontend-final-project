@@ -1,5 +1,6 @@
 import React from "react";
 import { Layout } from "../components/structure/layout";
+import StaticSlide from "../components/staticSlide";
 
 class Index extends React.Component<any, any> {
   constructor(props: any) {
@@ -10,6 +11,7 @@ class Index extends React.Component<any, any> {
     return (
       <div>
         <Layout>
+          <StaticSlide />
         </Layout>
       </div>
     );

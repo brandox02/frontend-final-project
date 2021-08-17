@@ -1,17 +1,23 @@
+import { useState } from "react";
 import Header from "../header";
-import LestMenu from "../left_menu";
+import LeftMenu from "../left_menu";
 
 const Layout = (props) => {
+  const [menu, setMenu] = useState(false);
   return (
     <div id="layout">
-      <Header />
-      <LestMenu
+      <Header 
+        menuState={menu}
+        setMenu={setMenu}
+      />
+      <LeftMenu
         categoris={[
           { name: "Categoy 1", cover: "IMG_5200.jpg" },
           { name: "Categoy 1", cover: "IMG_5200.jpg" },
           { name: "Categoy 1", cover: "IMG_5200.jpg" },
         ]}
-        visible={true}
+        visible={menu}
+        changeVisible={setMenu}
       />
       {props.children}
     </div>
