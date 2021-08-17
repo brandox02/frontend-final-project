@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "../header";
 import LeftMenu from "../left_menu";
+import Footer from "../footer";
 
 const Layout = (props) => {
   const [menu, setMenu] = useState(false);
@@ -20,6 +21,7 @@ const Layout = (props) => {
         changeVisible={setMenu}
       />
       {props.children}
+      <Footer/>
     </div>
   );
 };
