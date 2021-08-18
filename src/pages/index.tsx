@@ -24,8 +24,6 @@ const items_array = new Array<string>(
   link_1
 );
 
-
-
 class Index extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
@@ -53,7 +51,7 @@ class Index extends React.Component<any, any> {
             <p style={{ margin: "2rem 1rem", fontSize: "2em" }}>
               <b>Explore designs picked for you</b>
             </p>
-            <Carrusel perPage={3}>
+            <Carrusel perPage={0}>
               {items_array.map((item, index) => (
                 <ItemCard
                   name="phone cover"
@@ -70,10 +68,12 @@ class Index extends React.Component<any, any> {
             </p>
             <Carrusel perPage={1}>
               <img
+                className="cover-img"
                 src="https://alternativanerd.com.br/wp-content/uploads/2019/03/810ccR3YiuIJtufm2uxS7EIEFKc-850x450.jpg"
                 alt="Image 1"
               />
               <img
+                className="cover-img"
                 src="https://somoskudasai.com/wp-content/uploads/2020/11/portada_love-live-nijigasaki-23.jpg"
                 alt="Image 2"
               />
