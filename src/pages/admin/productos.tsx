@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import SideNavigationBar from '../../components/SideNavigationBar'
-import Productos from '../../components/Productos/Productos'
+import Productos from '../../components/admin/Productos/Productos'
 
 
 export default function _Productos() {

@@ -1,6 +1,6 @@
 import React from 'react'
 // import Map from './Map'
-import Pedido from '../../components/Pedidos/Pedidos'
+import Pedido from '../../components/admin/Pedidos/Pedidos'
 import SideNavigationBar from '../../components/SideNavigationBar'
 
 

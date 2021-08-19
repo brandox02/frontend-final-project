@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import SideNavigationBar from '../../components/SideNavigationBar'
-import Usuarios from '../../components/Usuarios/Usuarios'
+import Usuarios from '../../components/admin/Usuarios/Usuarios'
 
 const selectedStyle = {
    backgroundColor: '#7FB4E5',

@@ -8,7 +8,7 @@ import ItemCard from "../components/item-card";
 const link_0 =
   "https://i.pinimg.com/originals/71/96/cf/7196cfdf85e22579fe08e82385d4061a.png";
 const link_1 =
-  "https://www.senorcool.com/en/system/files/styles/artwork_case_phone_iphone7/private/senorcool_paisdelasmaquinas_evangelion_eva_kanji.png?itok=0P8u19ZE";
+  "https://ih1.redbubble.net/image.1890480909.1051/icr,iphone_12_soft,back,a,x600-pad,600x600,f8f8f8.jpg";
 
 const product_array = new Array<number>(1, 2, 3, 4, 5, 8, 9, 0);
 const items_array = new Array<string>(

@@ -18,7 +18,7 @@ export default function ShoppingCard(props) {
             <ItemCard
               name="phone cover"
               seller="mashu "
-              img_url="https://www.senorcool.com/en/system/files/styles/artwork_case_phone_iphone7/private/senorcool_paisdelasmaquinas_evangelion_eva_kanji.png?itok=0P8u19ZE"
+              img_url="https://ih1.redbubble.net/image.1890480909.1051/icr,iphone_12_soft,back,a,x600-pad,600x600,f8f8f8.jpg"
               fav={false}
             />
           </div>
