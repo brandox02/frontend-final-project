@@ -38,12 +38,12 @@ export default function SideNavigationBar() {
       <div className="" style={styles}>
          <div><h3>Menu de Navegacion</h3></div>
          <div className =''>
-            <Item label='Categorias' route='/administration/categorias'/>
-            <Item label='Usuarios' route='/administration/usuarios'/>
-            <Item label='Productos' route='/administration/productos'/>
-            <Item label='Clientes' route='/administration/clientes'/>
-            <Item label='Cumpleanos' route='/administration/cumpleanos'/>
-            <Item label='Pedidos' route='/administration/pedidos' />
+            <Item label='Categorias' route='/admin/categorias'/>
+            <Item label='Usuarios' route='/admin/usuarios'/>
+            <Item label='Productos' route='/admin/productos'/>
+            <Item label='Clientes' route='/admin/clientes'/>
+            <Item label='Cumpleanos' route='/admin/cumpleanos'/>
+            <Item label='Pedidos' route='/admin/pedidos' />
          </div>
       </div>
    );

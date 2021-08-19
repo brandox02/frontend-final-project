@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Producto } from '../../redux/types/Entities'
+import { Producto } from '../../../redux/types/Entities'
 import RenderTable from './RenderTable'
 
 const productosData: Producto[] = [
