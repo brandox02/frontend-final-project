@@ -2,7 +2,7 @@ import { UsuarioAction } from '../types/UsuarioTypes'
 import { Usuario } from '../types/Entities'
 import { UsuarioEnum } from '../enums/UsuarioEnum'
 
-const initialState: Array<Usuario> = []
+const initialState: Array<Usuario> | null = null
 
 export default function UsuarioReducer(state = initialState, action: UsuarioAction) {
 

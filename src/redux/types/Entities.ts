@@ -7,20 +7,20 @@ export interface Categoria {
 }
 
 export interface Usuario {
-   id?: Number,
+   id?: number,
    nombreCompleto: string,
    nombreUsuario: string,
    contrasena: string,
 }
 
 export interface Producto {
-   id?: Number,
+   id?: number,
    nombre: string,
    imagen: string,
-   precio: Number,
-   stock: Number,
-   categoria: Categoria,
-   categoriaId: Number
+   precio: number,
+   stock: number,
+   categoria?: Categoria,
+   categoriaId?: Number
 }
 
 export enum EstadoOrden {
