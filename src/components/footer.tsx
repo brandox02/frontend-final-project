@@ -1,10 +1,11 @@
 import { github, favorite } from "./icons";
+import Link from 'next/link'  
 const Footer = (props) => {
   return (
     <footer id="Footer">
       <div className="container">
         <div className="d1">
-          <b>λ</b> Amadis Ecommers!
+          <b>λ&nbsp;</b><Link href="/about">Amadis Ecommers!</Link> 
           <p style={{margin:"0.5em"}}>{github}</p>
         </div>
         <div className="d2">
