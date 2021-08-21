@@ -1,20 +1,11 @@
 import { useState } from "react";
-import { favorite_null, favorite } from "./icons";
+import FavoriteIcon from "../components/products/favorite-btn"
 
 type Item = {
   name: string;
   seller: string;
   img_url: string;
   fav: boolean;
-};
-
-const FavoriteIcon = (props: { favorite: Boolean; setFavorite:(arg:any)=>void }) => {
-  return (
-    <div className="favorite-icon"
-    onClick={() => props.setFavorite(!props.favorite)}>
-      <span>{props.favorite ? favorite : favorite_null}</span>
-    </div>
-  );
 };
 
 export default function ItemCard(props: Item) {

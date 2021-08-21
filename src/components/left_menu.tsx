@@ -10,7 +10,6 @@ interface MenuProps {
 }
 
 const CategoryContainer = (props: Category) => {
-  console.log(props.name);
 
   return (
     <div className="category container">
@@ -23,7 +22,6 @@ const CategoryContainer = (props: Category) => {
 
 const LeftMenu = (props: MenuProps) => {
   const hidden_menu=(e:any)=>{
-    console.log(props.visible)
     props.changeVisible(false)
   }
   return (
