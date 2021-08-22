@@ -3,14 +3,15 @@ import CardIcon from "./cart-btn";
 import Cover from "./cover";
 import FavoriteIcon from "./favorite-btn";
 
-export type ProductType = {
+export type Item = {
   id: number;
   name: string;
   description: string;
+  fav: boolean;
   img_cover: string;
 };
 
-export default function Item(props: ProductType) {
+export default function Item(props: Item) {
   const [fav, setFavorite] = useState(false);
   const [cart, setCart] = useState(false);
 

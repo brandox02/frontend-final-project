@@ -22,7 +22,7 @@ export default function Developer(props: DeveloperProps) {
       />
       <div className="text-center">
         <p className="fs-4 text-center">
-          <a href={props.github}>{props.name}</a>
+          <a href={props.github} target="_blank">{props.name}</a>
         </p>
 
         {props.contrib.map((item, index) => {

@@ -4,6 +4,7 @@ import StaticSlide from "../components/staticSlide";
 import ProductCard, { ProductDisplay } from "../components/productCard";
 import Carrusel from "../components/carrusel";
 import ItemCard from "../components/item-card";
+import { Item } from "../components/products/item";
 
 const link_0 =
   "https://i.pinimg.com/originals/71/96/cf/7196cfdf85e22579fe08e82385d4061a.png";
@@ -24,9 +25,22 @@ const items_array = new Array<string>(
   link_1
 );
 
-class Index extends React.Component<any, any> {
+type IndexState = {
+  items: Array<Item>;
+};
+
+class Index extends React.Component<any, IndexState> {
   constructor(props: any) {
     super(props);
+    this.state = {
+      items: new Array<Item>(),
+    };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3000/api/products/")
+      .then((res) => res.json())
+      .then((data) => this.setState(() => ({ items: data })));
   }
 
   render() {
@@ -51,14 +65,15 @@ class Index extends React.Component<any, any> {
             <p style={{ margin: "2rem 1rem", fontSize: "2em" }}>
               <b>Explore designs picked for you</b>
             </p>
-            <Carrusel perPage={0}>
-              {items_array.map((item, index) => (
+            <Carrusel perPage={3}>
+              {this.state.items.map((item) => (
                 <ItemCard
-                  name="phone cover"
-                  seller="mashu "
-                  img_url={item}
-                  fav={true}
-                  key={index}
+                  id={item.id}
+                  name={item.name}
+                  description={item.description}
+                  img_cover={item.img_cover}
+                  fav={item.fav}
+                  key={item.id}
                 />
               ))}
             </Carrusel>
