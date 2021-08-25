@@ -2,10 +2,10 @@ import { AddCategoriaStartAction, AddCategoriaErrorAction, AddCategoriaSucessAct
 import { CategoriaEnum } from '../../enums/CategoriaEnum'
 import { Categoria } from '../../types/Entities'
 import CategoriaServices from '../../../services/CategoriaServices'
-import store from '../../store'
+import  { State } from '../../store'
 
 
-export default async function AddCategoriaAction(categoria: Categoria) {
+const AddCategoriaAction =  (categoria: Categoria) => (dispatch: any, state: State) => {
 
    function start(): AddCategoriaStartAction {
       return {
@@ -27,12 +27,14 @@ export default async function AddCategoriaAction(categoria: Categoria) {
       }
    }
 
-   store.dispatch(start())
+   dispatch(start())
    CategoriaServices.addCategoria(categoria)
       .then(data => {
-         store.dispatch(success(data))
+         dispatch(success(data))
       })
       .catch(err => {
-         store.dispatch(error(err))
+         dispatch(error(err))
       })
 }
+
+export default AddCategoriaAction

@@ -29,6 +29,19 @@ export type AddCategoriaErrorAction = {
    payload: Error
 }
 
+export type UpdateCategoriaStartAction = {
+   type: CategoriaEnum.UPDATE_CATEGORIA_START,
+   payload: null
+}
+export type UpdateCategoriaSucessAction = {
+   type: CategoriaEnum.UPDATE_CATEGORIA_SUCCESS,
+   payload: null
+}
+export type UpdateCategoriaErrorAction = {
+   type: CategoriaEnum.UPDATE_CATEGORIA_ERROR,
+   payload: Error
+}
+
 export type DeleteCategoriaStartAction = {
    type: CategoriaEnum.DELETE_CATEGORIA_START,
    payload: null

@@ -1,4 +1,4 @@
-import { AddProductoStartAction, AddProductoErrorAction, AddProductoSucessAction } from '../../types/ProductoTypes'
+import { UpdateProductoStartAction, UpdateProductoErrorAction, UpdateProductoSucessAction } from '../../types/ProductoTypes'
 import { ProductoEnum } from '../../enums/ProductoEnum'
 import { Producto } from '../../types/Entities'
 import ProductoServices from '../../../services/ProductoServices'
@@ -7,30 +7,29 @@ import PopulateProductoAction from './PopulateProductoAction'
 
 const AddProductoAction = (Producto: Producto) => (dispatch: any, state: State) =>{
 
-   function start(): AddProductoStartAction {
+   function start(): UpdateProductoStartAction {
       return {
-         type: ProductoEnum.ADD_PRODUCTO_START,
+         type: ProductoEnum.UPDATE_PRODUCTO_START,
          payload: null
       }
    }
-   function error(error: Error): AddProductoErrorAction {
+   function error(error: Error): UpdateProductoErrorAction {
       return {
-         type: ProductoEnum.ADD_PRODUCTO_ERROR,
+         type: ProductoEnum.UPDATE_PRODUCTO_ERROR,
          payload: error
       }
    }
 
-   function success(Producto: Producto): AddProductoSucessAction {
+   function success(f: boolean): UpdateProductoSucessAction {
       return {
-         type: ProductoEnum.ADD_PRODUCTO_SUCCESS,
-         payload: Producto
+         type: ProductoEnum.UPDATE_PRODUCTO_SUCCESS,
+         payload: f
       }
    }
 
    dispatch(start())
-   ProductoServices.addProducto(Producto)
+   ProductoServices.updateProducto(Producto)
       .then(data => {
-         console.log(data)
          dispatch(success(data))
          dispatch(PopulateProductoAction())
       })

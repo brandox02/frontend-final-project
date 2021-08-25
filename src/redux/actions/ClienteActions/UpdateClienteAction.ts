@@ -1,4 +1,4 @@
-import { AddClienteStartAction, AddClienteErrorAction, AddClienteSucessAction } from '../../types/ClienteTypes'
+import { UpdateClienteStartAction, UpdateClienteErrorAction, UpdateClienteSucessAction } from '../../types/ClienteTypes'
 import { ClienteEnum } from '../../enums/ClienteEnum'
 import { Cliente } from '../../types/Entities'
 import ClienteServices from '../../../services/ClienteServices'
@@ -6,30 +6,30 @@ import store, { State } from '../../store'
 import PopulateClienteAction from './PopulateClienteAction'
 
 
-const AddClienteAction = (cliente: Cliente) => (dispatch: any, state: State) =>  {
+const UpdateClienteAction = (cliente: Cliente) => (dispatch: any, state: State) =>  {
 
-   function start(): AddClienteStartAction {
+   function start(): UpdateClienteStartAction {
       return {
-         type: ClienteEnum.ADD_CLIENTE_START,
+         type: ClienteEnum.UPDATE_CLIENTE_START,
          payload: null
       }
    }
-   function error(error: Error): AddClienteErrorAction {
+   function error(error: Error): UpdateClienteErrorAction {
       return {
-         type: ClienteEnum.ADD_CLIENTE_ERROR,
+         type: ClienteEnum.UPDATE_CLIENTE_ERROR,
          payload: error
       }
    }
 
-   function success(Cliente: Cliente): AddClienteSucessAction {
+   function success(f: boolean): UpdateClienteSucessAction {
       return {
-         type: ClienteEnum.ADD_CLIENTE_SUCCESS,
-         payload: Cliente
+         type: ClienteEnum.UPDATE_CLIENTE_SUCCESS,
+         payload: f
       }
    }
 
    dispatch(start())
-   ClienteServices.addCliente(cliente)
+   ClienteServices.updateCliente(cliente)
       .then(data => {
          dispatch(success(data))
          dispatch(PopulateClienteAction())
@@ -40,4 +40,4 @@ const AddClienteAction = (cliente: Cliente) => (dispatch: any, state: State) => 
       // })
 }
 
-export default AddClienteAction
+export default UpdateClienteAction

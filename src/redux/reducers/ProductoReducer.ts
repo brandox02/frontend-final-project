@@ -12,13 +12,19 @@ export default function ProductoReducer(state = initialState, action: ProductoAc
       case ProductoEnum.ADD_PRODUCTO_START:
          return state
 
+      case ProductoEnum.UPDATE_PRODUCTO_START:
+         return state
+
       case ProductoEnum.DELETE_PRODUCTO_START:
          return state
       case ProductoEnum.POPULATE_PRODUCTO_START:
          return state
 
       case ProductoEnum.ADD_PRODUCTO_SUCCESS:
-         return action.payload
+         return [...state, action.payload]
+
+      case ProductoEnum.UPDATE_PRODUCTO_SUCCESS:
+         return state
 
       case ProductoEnum.DELETE_PRODUCTO_SUCCESS:
          return action.payload
@@ -29,11 +35,15 @@ export default function ProductoReducer(state = initialState, action: ProductoAc
       case ProductoEnum.ADD_PRODUCTO_ERROR:
          return action.payload
 
+      case ProductoEnum.ADD_PRODUCTO_ERROR:
+         return action.payload
+
       case ProductoEnum.DELETE_PRODUCTO_ERROR:
          return action.payload
 
       case ProductoEnum.POPULATE_PRODUCTO_ERROR:
          return action.payload
+
 
       default:
          return state

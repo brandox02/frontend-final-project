@@ -1,9 +1,11 @@
 import { PopulateCategoriaStartAction, PopulateCategoriaErrorAction, PopulateCategoriaSucessAction } from '../../types/CategoriaTypes'
 import { CategoriaEnum } from '../../enums/CategoriaEnum'
 import { Categoria } from '../../types/Entities'
-import store from '../../store'
 import CategoriaServices from '../../../services/CategoriaServices'
-export default function DeleteCategoriaAction() {
+import { State } from '../../store'
+
+
+const PopulateCategoriaAction = () => (dispatch: any, getState: State) => {
 
    function start(): PopulateCategoriaStartAction {
       return {
@@ -25,13 +27,16 @@ export default function DeleteCategoriaAction() {
       }
    }
 
-   store.dispatch(start())
+   dispatch(start())
    CategoriaServices.getCategorias()
       .then(data => {
-         store.dispatch(success(data))
+         console.log(data)
+         dispatch(success(data))
       })
       .catch(err => {
-         store.dispatch(error(err))
+         dispatch(error(err))
       })
 
 }
+
+export default PopulateCategoriaAction

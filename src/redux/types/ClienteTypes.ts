@@ -28,11 +28,24 @@ export type AddClienteErrorAction = {
    type: ClienteEnum.ADD_CLIENTE_ERROR,
    payload: Error
 }
+export type UpdateClienteStartAction = {
+   type: ClienteEnum.UPDATE_CLIENTE_START,
+   payload: null
+}
+export type UpdateClienteSucessAction = {
+   type: ClienteEnum.UPDATE_CLIENTE_SUCCESS,
+   payload: boolean
+}
+export type UpdateClienteErrorAction = {
+   type: ClienteEnum.UPDATE_CLIENTE_ERROR,
+   payload: Error
+}
 
 export type DeleteClienteStartAction = {
    type: ClienteEnum.DELETE_CLIENTE_START,
    payload: null
 }
+
 export type DeleteClienteSucessAction = {
    type: ClienteEnum.DELETE_CLIENTE_SUCCESS,
    payload: Cliente

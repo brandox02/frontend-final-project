@@ -1,11 +1,11 @@
 import { PopulateProductoStartAction, PopulateProductoErrorAction, PopulateProductoSucessAction } from '../../types/ProductoTypes'
 import { ProductoEnum } from '../../enums/ProductoEnum'
 import { Producto } from '../../types/Entities'
-import store from '../../store'
+import store, { State } from '../../store'
 import ProductoServices from '../../../services/ProductoServices'
 
 
-export default function DeleteProductoAction() {
+const PopulateProductoAction = () => (dispatch: any, state: State ) => {
 
    function start(): PopulateProductoStartAction {
       return {
@@ -27,12 +27,14 @@ export default function DeleteProductoAction() {
       }
    }
 
-   store.dispatch(start())
+   dispatch(start())
    ProductoServices.getProductos()
       .then(data => {
-         store.dispatch(success(data))
+         dispatch(success(data))
       })
       .catch(err => {
-         store.dispatch(error(err))
+         dispatch(error(err))
       })
 }
+
+export default PopulateProductoAction

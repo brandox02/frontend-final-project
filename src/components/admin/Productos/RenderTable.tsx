@@ -5,7 +5,8 @@ interface IProps {
    children: {
       productosData: Producto[],
       setSelectedIndex: (index: number) => void,
-      selectedIndex: Number
+      selectedIndex: Number,
+      setCategoriaId: (arg0: number) => void
    }
 }
 
@@ -14,7 +15,7 @@ const selectedStyle = {
    color: 'white'
 }
 
-function RenderTable({ children: { selectedIndex, setSelectedIndex, productosData } }: IProps) {
+function RenderTable({ children: { selectedIndex, setSelectedIndex, productosData,setCategoriaId } }: IProps) {
 
    return (
       <table className="table border" style={{ transform: 'scale(1)' }}>
@@ -29,16 +30,20 @@ function RenderTable({ children: { selectedIndex, setSelectedIndex, productosDat
             </tr>
          </thead>
          <tbody>
-            {productosData.map((producto, index) => (
-               <tr onClick={() => setSelectedIndex(index)} key={producto.id.toString()}
-                  style={selectedIndex == index ? selectedStyle : {}}
+            {console.log(productosData)}
+            {productosData && productosData.map((producto, index) => (
+               <tr onClick={() => {
+                  setSelectedIndex(producto.id)
+                  setCategoriaId(producto.categoriaId)
+               }} key={producto.id.toString()}
+                  style={selectedIndex == producto.id ? selectedStyle : {}}
                >
                   <th scope="row">{producto.id}</th>
                   <td>{producto.nombre}</td>
                   <td>{producto.imagen}</td>
                   <td>{producto.precio}</td>
                   <td>{producto.stock}</td>
-                  <td>{producto.categoria.nombre}</td>
+                  <td>{producto.categoria && producto.categoria.nombre}</td>
                </tr>
             ))}
          </tbody>

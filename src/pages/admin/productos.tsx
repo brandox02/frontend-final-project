@@ -12,7 +12,6 @@ export default function _Productos() {
 
       </div>
       <div className='col-10'>
-         fds
          <Productos />
       </div>
    </div>

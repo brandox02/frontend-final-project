@@ -1,9 +1,14 @@
 
-
+export interface ApiResponse<T> {
+   token: string,
+   exito: number,
+   mensaje: string,
+   ls: T
+}
 
 export interface Categoria {
-   id?: Number,
-   nombre: string
+   id?: number,
+   nombre: number
 }
 
 export interface Usuario {
@@ -54,22 +59,22 @@ export interface Orden {
 
 export interface Cliente {
    id?: Number,
-   nombreCompleto: String,
-   email: String,
-   nombreUsuario: String,
-   contrasena: String,
-   numeroContacto: Number,
+   nombreCompleto: string,
+   email: string,
+   nombreUsuario: string,
+   contrasena: string,
+   numeroContacto?: Number,
    longitud: Number,
    latitud: Number,
-   direccion: String,
-   fechaNacimiento: Date
+   direccion: string,
+   fechaNacimiento: string
 }
 
 export interface Pedido {
    id?: Number,
    longitud: Number,
    latitud: Number,
-   orden: Orden ,
+   orden: Orden,
    ordenId: Number
    estadoPedido: EstadoPedido
 }

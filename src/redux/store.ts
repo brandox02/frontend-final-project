@@ -5,12 +5,21 @@ import CategoriaReducer from './reducers/CategoriaReducer'
 import ClienteReducer from './reducers/ClienteReducer'
 import ProductoReducer from './reducers/ProductoReducer'
 import UsuarioReducer from './reducers/UsuarioReducer'
+import { Categoria, Producto, Cliente, Usuario } from './types/Entities'
+
+
+export type State = {
+   categorias: Categoria[],
+   productos: Producto[],
+   clientes: Cliente[],
+   usuarios: Usuario[]
+}
 
 const reducers = combineReducers({
    categorias: CategoriaReducer,
    productos: ProductoReducer,
-   cliente: ClienteReducer,
-   usuario: UsuarioReducer
+   clientes: ClienteReducer,
+   usuarios: UsuarioReducer
 })
 
 const store = createStore(

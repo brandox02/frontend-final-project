@@ -29,6 +29,19 @@ export type AddProductoErrorAction = {
    payload: Error
 }
 
+export type UpdateProductoStartAction = {
+   type: ProductoEnum.UPDATE_PRODUCTO_START,
+   payload: null
+}
+export type UpdateProductoSucessAction = {
+   type: ProductoEnum.UPDATE_PRODUCTO_SUCCESS,
+   payload: boolean
+}
+export type UpdateProductoErrorAction = {
+   type: ProductoEnum.UPDATE_PRODUCTO_ERROR,
+   payload: Error
+}
+
 export type DeleteProductoStartAction = {
    type: ProductoEnum.DELETE_PRODUCTO_START,
    payload: null
@@ -45,4 +58,5 @@ export type DeleteProductoErrorAction = {
 export type ProductoAction = 
 PopulateProductoStartAction | PopulateProductoSucessAction | PopulateProductoErrorAction |
 AddProductoStartAction | AddProductoSucessAction | AddProductoErrorAction |
-DeleteProductoStartAction | DeleteProductoSucessAction | DeleteProductoErrorAction
+DeleteProductoStartAction | DeleteProductoSucessAction | DeleteProductoErrorAction |
+UpdateProductoErrorAction | UpdateProductoStartAction | UpdateProductoSucessAction

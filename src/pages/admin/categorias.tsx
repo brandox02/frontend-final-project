@@ -1,5 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import SideNavigationBar from '../../components/SideNavigationBar'
+import AddCategoriaAction from '../../redux/actions/CategoriaActions/AddCategoriaAction'
+import UpdateCategoriaAction from '../../redux/actions/CategoriaActions/UpdateCategoriaAction'
+import { State } from '../../redux/store'
 
 
 const selectedStyle = {
@@ -12,11 +16,20 @@ export default function Categorias() {
    // index of row selected
    const [selectedIndex, setSelectedIndex] = useState(-1)
    // data to render
-   const categoriasData = [{ id: 1, nombre: 'Zapatos' }, { id: 2, nombre: 'Deportes' }]
+   const [categoriasData, setCategoriasData] = useState([])
+   const [_, render] = useReducer(x => x + 1, 0)
    // mode: updating or inserting
    const [isUpdating, setIsUpdating] = useState(false)
    // input state
    const [txt, setTxt] = useState('')
+   const dispatch = useDispatch()
+   const state = useSelector((state: State) => state.categorias)
+
+   useEffect(() => {
+      setCategoriasData(state)
+      console.log('cambio')
+      render()
+   }, [state])
 
    function handlerSwitch() {
       if (!isUpdating) {
@@ -31,10 +44,19 @@ export default function Categorias() {
       }
    }
 
+   function save() {
+      if (isUpdating) {
+         dispatch(UpdateCategoriaAction({ id: selectedIndex, nombre: parseInt(txt) }))
+      } else {
+         dispatch(AddCategoriaAction({ nombre: parseInt(txt) }))
+      }
+   }
+
 
    useEffect(() => {
       if (isUpdating) {
-         setTxt(categoriasData[selectedIndex].nombre)
+         const str = categoriasData.find(categoria => categoria.id === selectedIndex).nombre.toString()
+         setTxt(str)
       } else {
          setTxt('')
       }
@@ -60,7 +82,7 @@ export default function Categorias() {
                         <input className='p-1 my-2 w-100' type='text'
                            placeholder='Ingresalo...' value={txt} onChange={e => setTxt(e.currentTarget.value)}
                         />
-                        <button>Salvar Cambios</button>
+                        <button onClick={save}>Salvar Cambios</button>
                         <div className=' my-4 d-flex justify-content-around'>
                            <button onClick={handlerSwitch}
                            >{isUpdating ? 'Agregar Nueva' : 'Actualizar existente'}
@@ -79,8 +101,11 @@ export default function Categorias() {
                         </thead>
                         <tbody>
                            {categoriasData.map((categoria, index) => (
-                              <tr onClick={() => setSelectedIndex(index)}
-                                 style={selectedIndex == index ? selectedStyle : {}}
+                              <tr onClick={() => {
+                                 setSelectedIndex(categoria.id)
+
+                              }}
+                                 style={selectedIndex == categoria.id ? selectedStyle : {}}
                               >
                                  <th scope="row">{categoria.id}</th>
                                  <td>{categoria.nombre}</td>

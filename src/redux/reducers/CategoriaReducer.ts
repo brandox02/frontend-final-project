@@ -18,7 +18,7 @@ export default function CategoriaReducer(state = initialState, action: Categoria
          return state
 
       case CategoriaEnum.ADD_CATEGORIA_SUCCESS:
-         return action.payload
+         return [...state, action.payload]
 
       case CategoriaEnum.DELETE_CATEGORIA_SUCCESS:
          return action.payload

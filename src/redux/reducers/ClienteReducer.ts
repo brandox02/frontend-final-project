@@ -18,7 +18,7 @@ export default function ClienteReducer(state = initialState, action: ClienteActi
          return state
 
       case ClienteEnum.ADD_CLIENTE_SUCCESS:
-         return action.payload
+         return state
 
       case ClienteEnum.DELETE_CLIENTE_SUCCESS:
          return action.payload

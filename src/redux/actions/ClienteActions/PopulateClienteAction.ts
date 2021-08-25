@@ -1,10 +1,10 @@
 import { PopulateClienteStartAction, PopulateClienteErrorAction, PopulateClienteSucessAction } from '../../types/ClienteTypes'
 import { ClienteEnum } from '../../enums/ClienteEnum'
 import { Cliente } from '../../types/Entities'
-import store from '../../store'
+import store, { State } from '../../store'
 import ClienteServices from '../../../services/ClienteServices'
 
-export default function DeleteClienteAction() {
+const PopulateClienteAction = () => (dispatch: any, state: State) => {
 
    function start(): PopulateClienteStartAction {
       return {
@@ -36,3 +36,4 @@ export default function DeleteClienteAction() {
       })
 
 }
+export default PopulateClienteAction
