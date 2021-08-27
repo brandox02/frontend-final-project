@@ -1,6 +1,5 @@
 import React from 'react'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import * as f from 'leaflet'
+
 
 
 export default function Map() {

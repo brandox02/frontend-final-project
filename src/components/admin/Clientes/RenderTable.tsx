@@ -1,11 +1,11 @@
 import React from 'react'
-import { Usuario } from '../../redux/types/Entities'
+import { Usuario } from '../../../redux/types/Entities'
 
 interface IProps {
    children: {
       usuariosData: Usuario[],
       setSelectedIndex: (index: number) => void,
-      selectedIndex: Number
+      selectedIndex: number
    }
 }
 

@@ -1,5 +1,5 @@
 import { DetalleOrden, Orden } from "../redux/types/Entities";
-
+import axios from '../baseAxios'
 
 class OrdenServices {
 

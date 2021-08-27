@@ -7,7 +7,7 @@ export type Item = {
   id: number;
   name: string;
   description: string;
-  fav: boolean;
+  fav?: boolean;
   img_cover: string;
 };
 

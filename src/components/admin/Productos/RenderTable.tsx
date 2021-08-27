@@ -1,11 +1,11 @@
 import React from 'react'
-import { Producto } from '../../redux/types/Entities'
+import { Producto } from '../../../redux/types/Entities'
 
 interface IProps {
    children: {
       productosData: Producto[],
       setSelectedIndex: (index: number) => void,
-      selectedIndex: Number,
+      selectedIndex: number,
       setCategoriaId: (arg0: number) => void
    }
 }

@@ -25,7 +25,7 @@ export interface Producto {
    precio: number,
    stock: number,
    categoria?: Categoria,
-   categoriaId?: Number
+   categoriaId?: number
 }
 
 export enum EstadoOrden {

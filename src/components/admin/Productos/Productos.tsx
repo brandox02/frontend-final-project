@@ -123,13 +123,13 @@ export default function Productos() {
             <div>
                <label>Precio</label>
                <input className='p-1 my-2 w-100' type='number' placeholder='Ingresa precio'
-                  onChange={e => setTxtPrecio(Number(e.currentTarget.value))} value={txtPrecio}
+                  onChange={e => setTxtPrecio(parseInt(e.currentTarget.value))} value={txtPrecio}
                />
             </div>
             <div>
                <label>Stock</label>
                <input className='p-1 my-2 w-100' type='number' placeholder='Ingresalo el Stock'
-                  onChange={e => setTxtStock(Number(e.currentTarget.value))} value={txtStock}
+                  onChange={e => setTxtStock(parseInt(e.currentTarget.value))} value={txtStock}
                />
             </div>
             <select className='mb-3' value={txtCategoria} onChange={e => {

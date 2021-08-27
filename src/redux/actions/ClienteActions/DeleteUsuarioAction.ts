@@ -19,7 +19,7 @@ export default function DeleteClienteAction(id: number) {
       }
    }
 
-   function success(Cliente: Cliente): DeleteClienteSucessAction {
+   function success(Cliente: boolean): DeleteClienteSucessAction {
       return {
          type: ClienteEnum.DELETE_CLIENTE_SUCCESS,
          payload: Cliente

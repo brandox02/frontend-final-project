@@ -35,7 +35,7 @@ export type DeleteUsuarioStartAction = {
 }
 export type DeleteUsuarioSucessAction = {
    type: UsuarioEnum.DELETE_USUARIO_SUCCESS,
-   payload: Usuario
+   payload: boolean
 }
 export type DeleteUsuarioErrorAction = {
    type: UsuarioEnum.DELETE_USUARIO_ERROR,

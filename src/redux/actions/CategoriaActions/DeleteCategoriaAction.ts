@@ -19,7 +19,7 @@ export default function DeleteCategoriaAction(id: number) {
       }
    }
 
-   function success(categoria: Categoria): DeleteCategoriaSucessAction {
+   function success(categoria:boolean): DeleteCategoriaSucessAction {
       return {
          type: CategoriaEnum.DELETE_CATEGORIA_SUCCESS,
          payload: categoria

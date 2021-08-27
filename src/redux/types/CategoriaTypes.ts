@@ -48,7 +48,7 @@ export type DeleteCategoriaStartAction = {
 }
 export type DeleteCategoriaSucessAction = {
    type: CategoriaEnum.DELETE_CATEGORIA_SUCCESS,
-   payload: Categoria
+   payload: boolean
 }
 export type DeleteCategoriaErrorAction = {
    type: CategoriaEnum.DELETE_CATEGORIA_ERROR,

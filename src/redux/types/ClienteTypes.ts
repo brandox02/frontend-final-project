@@ -48,7 +48,7 @@ export type DeleteClienteStartAction = {
 
 export type DeleteClienteSucessAction = {
    type: ClienteEnum.DELETE_CLIENTE_SUCCESS,
-   payload: Cliente
+   payload: boolean
 }
 export type DeleteClienteErrorAction = {
    type: ClienteEnum.DELETE_CLIENTE_ERROR,

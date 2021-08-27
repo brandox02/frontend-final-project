@@ -38,9 +38,13 @@ class Index extends React.Component<any, IndexState> {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/api/products/")
-      .then((res) => res.json())
-      .then((data) => this.setState(() => ({ items: data })));
+    // fetch("http://localhost:3000/api/productoes", {
+    //   headers: new Headers({
+    //   'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImJyYW5kb3hAZXhhbXBsZS5jb20iLCJleHAiOjE2NjE1NjIwNzF9.EAqArNXKhbcydQel82L30e5rQbkf4Lc0SqIb1xkUwC8',
+    // })
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => this.setState(() => ({ items: data })));
   }
 
   render() {
